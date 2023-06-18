@@ -75,7 +75,8 @@ describe('Automation Playground', () => {
               .then((y) => {
                 cy.log('y = ' + y)
                 cy.log('x+y = ' + (x+y))
-                cy.get(`span[role="cell"]:eq(${y + x})`)
+                cy.get('span[role="cell"]').eq(x+y)
+                //cy.get(`span[role="cell"]:eq(${y + x})`)
                   .invoke('text')
                   .then((result) => {
                     expect(expected).to.equal(result);
