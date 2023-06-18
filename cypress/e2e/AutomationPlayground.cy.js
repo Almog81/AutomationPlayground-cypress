@@ -22,4 +22,9 @@ describe('Automation Playground', () => {
     cy.get('#greenButton').click()
     cy.get('#greenButton').should('not.be', 'isClickable()')
   })
+
+  it('Test04: Load Delay', () => {
+    cy.contains('Load Delay').click()
+    cy.get('.btn-primary').should('have.text', 'Button Appearing After Delay')
+  })
 })
