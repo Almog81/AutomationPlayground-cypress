@@ -27,4 +27,10 @@ describe('Automation Playground', () => {
     cy.contains('Load Delay').click()
     cy.get('.btn-primary').should('have.text', 'Button Appearing After Delay')
   })
+
+  it('Test05: AJAX Data', () => {
+    cy.contains('AJAX Data').click()
+    cy.get('.btn-primary').click()
+    cy.get('bg-success', {timeout:20000}).should('have.text', 'Data loaded with AJAX get request.')
+  })
 })
