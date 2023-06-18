@@ -20,5 +20,6 @@ describe('Automation Playground', () => {
   it('Test03: Hidden Layers', () => {
     cy.contains('Hidden Layers').click()
     cy.get('#greenButton').click()
+    cy.get('#greenButton').click()
   })
 })
