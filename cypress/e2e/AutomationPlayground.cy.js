@@ -34,57 +34,52 @@ describe('Automation Playground', () => {
     cy.get('.bg-success', {timeout:20000}).should('have.text', 'Data loaded with AJAX get request.')
   })
 
-  it('Test05: Client Side Delay', () => {
+  it('Test06: Client Side Delay', () => {
     cy.contains('Client Side Delay').click()
     cy.get('.btn-primary').click()
     cy.get('.bg-success', {timeout:20000}).should('have.text', 'Data calculated on the client side.')
   })
 
-  it('Test06: Click', () => {
+  it('Test07: Click', () => {
     cy.contains('Click').click()
     cy.get('.btn-primary').click()
     cy.get('.btn-success').should('exist')
   })
 
-  it('Test07: Text Input', () => {
+  it('Test08: Text Input', () => {
     cy.contains('Text Input').click()
     cy.get('.form-control').type('KUKU')
     cy.get('.btn-primary').click()
     cy.get('.btn-primary').should('have.text', 'KUKU')
   })
 
-  it('Test08: Scrollbars', () => {
+  it('Test09: Scrollbars', () => {
     cy.contains('Scrollbars').click()
     cy.get('.btn-primary').scrollIntoView().click()
   })
 
-  it.only('Test09: Dynamic Table', () => {
+  it('Test10: Dynamic Table', () => {
     cy.contains('Dynamic Table').click();
-  
-    cy.get('.bg-warning')
-      .invoke('text')
-      .then((text) => {
-        const expected = text.split(': ')[1];
-        cy.log(expected)
-        cy.contains('span[role="columnheader"]', 'CPU')
-          .invoke('index')
-          .then((x) => {
-            cy.log('x = ' + x)
-            cy.contains('span[role="cell"]', 'Chrome')
-              .invoke('index')
-              .then((y) => {
-                cy.log('y = ' + y)
-                cy.log('x+y = ' + (x+y))
-                cy.get('span[role="cell"]').eq(x+y)
-                //cy.get(`span[role="cell"]:eq(${y + x})`)
-                  .invoke('text')
-                  .then((result) => {
-                    expect(expected).to.equal(result);
-                  });
-              });
-          });
+    
+    // Locate the Chrome process row
+    cy.get('[role="row"]').contains('[role="cell"]', 'Chrome').parents('[role="row"]').as('chromeRow');
+    
+    // Get the CPU load value for the Chrome process
+    cy.contains('span[role="columnheader"]', 'CPU').invoke('index').then((cpuIndex) => {
+      cy.get('@chromeRow').find('[role="cell"]').eq(cpuIndex).invoke('text').then((cpuValue) => {      
+        // Get the value from the yellow label
+        cy.get('.bg-warning').invoke('text').then((expectedValue) => {
+          const expected = expectedValue.split(': ')[1];
+          //Assert The Answer
+          expect(expected.trim()).to.equal(cpuValue.trim());
+        });
       });
+    });
   });
-  
 
-})
+  it.only('Test11: Verify Text', () => {
+    cy.contains('Verify Text').click()
+    cy.get('.badge-secondary').contains('Welcome').should('have.text', 'Welcome UserName!')
+  })
+    
+});
