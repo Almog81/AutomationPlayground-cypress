@@ -79,7 +79,11 @@ describe('Automation Playground', () => {
 
   it.only('Test11: Verify Text', () => {
     cy.contains('Verify Text').click()
-    cy.get('.badge-secondary').contains('Welcome').should('have.text', 'Welcome UserName!')
+    //TODO import XPath for this test 
+    cy.xpath("//span[normalize-space(.)='Welcome UserName!']").then((result) => {
+      const val = result.text()
+      expect("Welcome UserName!").to.equal(val);
+    });
   })
     
 });
