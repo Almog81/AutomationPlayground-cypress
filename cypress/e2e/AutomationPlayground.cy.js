@@ -77,13 +77,20 @@ describe('Automation Playground', () => {
     });
   });
 
-  it.only('Test11: Verify Text', () => {
+  it('Test11: Verify Text', () => {
     cy.contains('Verify Text').click()
     //TODO import XPath for this test 
     cy.xpath("//span[normalize-space(.)='Welcome UserName!']").then((result) => {
       const val = result.text()
       expect("Welcome UserName!").to.equal(val);
     });
+  })
+
+  it('Test12: Progress Bar', () => {
+    cy.contains('Progress Bar').click()
+    cy.get('#startButton').click()
+    cy.get('#progressBar').contains('75%', {timeout:25000}).should('have.text', '75%')
+    cy.get('#stopButton').click()
   })
     
 });
