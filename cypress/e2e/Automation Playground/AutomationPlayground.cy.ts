@@ -1,5 +1,8 @@
 /// <reference types="cypress" /> 
 
+import {SampleApp} from "./pages/SampleAppPage.js"
+let sampleApp = new SampleApp
+
 describe('Automation Playground', () => {
   beforeEach('Start Scenario', ()=> {
     cy.visit('http://www.uitestingplayground.com')
@@ -89,8 +92,25 @@ describe('Automation Playground', () => {
     cy.get('#stopButton').click()
   })
     
-  it.only('Test13: Visibility', () => {
+  it('Test13: Visibility', () => {
     cy.contains('Visibility').click()
-    cy.get('button').should('be.visible')
+    cy.get('button').as('buttons')
+    cy.get('@buttons').should('be.visible')
+    cy.get('.btn-primary').click()
+    cy.get('@buttons').should('be.visible')
+  })
+
+  it.only('Test14: Sample App', ()=>{
+    cy.contains('Sample App').click()
+    //Login Action
+    sampleApp.loginAction('Almog81','pwd')
+    sampleApp.verifyStatus('Welcome, Almog81!')
+
+    //Logout Action
+    sampleApp.logoutAction()
+    
+    //Fail to login
+    sampleApp.loginAction('Almog81','KUKU')
+    sampleApp.verifyStatus('Invalid username/password')
   })
 });
