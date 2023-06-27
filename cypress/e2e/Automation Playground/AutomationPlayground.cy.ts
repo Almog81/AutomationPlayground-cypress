@@ -77,7 +77,7 @@ describe('Automation Playground', () => {
     });
   });
 
-  it.only('Test11: Verify Text', () => {
+  it('Test11: Verify Text', () => {
     cy.contains('Verify Text').click()
     cy.xpath("//span[normalize-space(.)='Welcome UserName!']").should('contain' , 'Welcome UserName!')
   })
@@ -89,8 +89,8 @@ describe('Automation Playground', () => {
     cy.get('#stopButton').click()
   })
     
-  it('Test13: Visibility', () => {
+  it.only('Test13: Visibility', () => {
     cy.contains('Visibility').click()
-    
+    cy.get('button').should('be.visible')
   })
 });
