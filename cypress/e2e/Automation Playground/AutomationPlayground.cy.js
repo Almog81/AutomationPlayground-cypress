@@ -1,6 +1,6 @@
 /// <reference types="cypress" /> 
 
-import {SampleApp} from "./pages/SampleAppPage.js"
+import {SampleApp} from "./pages/SampleAppPage"
 let sampleApp = new SampleApp
 
 describe('Automation Playground', () => {
@@ -100,7 +100,7 @@ describe('Automation Playground', () => {
     cy.get('@buttons').should('be.visible')
   })
 
-  it.only('Test14: Sample App', ()=>{
+  it('Test14: Sample App', ()=>{
     cy.contains('Sample App').click()
     //Login Action
     sampleApp.loginAction('Almog81','pwd')
@@ -113,4 +113,33 @@ describe('Automation Playground', () => {
     sampleApp.loginAction('Almog81','KUKU')
     sampleApp.verifyStatus('Invalid username/password')
   })
+
+  it('Test15: Mouse Over', ()=> {
+    cy.contains('Mouse Over').click()
+    cy.contains('Click me').click()
+    cy.contains('Click me').click()
+    cy.get('#clickCount').should('have.text', '2')
+  })
+
+  it('Test16: Non-Breaking Space', ()=>{
+    cy.contains('Non-Breaking Space').click()
+    cy.xpath('//button[text()="My\u00A0Button"]').should('be.visible').click()
+    cy.contains('My Button').should('be.visible').click()
+  })
+
+  it('Test17: Overlapped Element', ()=>{
+    cy.contains('Overlapped Element').click()
+    cy.get('#id').type('1234')
+    cy.get('#name').scrollIntoView().type('KUKU').should('be.visible')
+  })
+
+  it('Test18: Shadow DOM', ()=>{
+    cy.contains('Shadow DOM').click()
+    cy.get('guid-generator')
+      .shadow()
+      .find('.button-generate')
+      .should('be.enabled')
+      .click()
+  })
+
 });
