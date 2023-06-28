@@ -24,24 +24,23 @@ The Cypress-Projects repository contains automated test scenarios for two differ
 
 The project is organized as follows:
 
-- `cypress/`
-  - `fixtures/`
+- `[cypress/](cypress/)`
+  - `[fixtures/](cypress/fixtures/)`
     - Contains test data files if needed.
-  - `e2e/`
-    - `Automation Playground/`
+  - `[e2e/](cypress/e2e/)`
+    - `[Automation Playground/](cypress/e2e/Automation Playground/)`
       - Contains the test files for Automation Playground scenarios.
-          - `pages/`
+          - `[pages/](cypress/e2e/Automation Playground/pages/)`
             - Contains Page Object classes for Automation Playground.
-    - `orangeHRM/`
+    - `[orangeHRM/](cypress/e2e/orangeHRM/)`
       - Contains the test files for OrangeHRM scenarios.
-        - `pages/`
+        - `[pages/](cypress/e2e/orangeHRM/pages/)`
             - Contains Page Object classes for OrangeHRM.
-  - `support/`
+  - `[support/](cypress/support/)`
     - Contains utility files, custom commands, and other support files for the tests.
-  - `plugins/`
+  - `[plugins/](cypress/plugins/)`
     - Contains Cypress plugins configuration files.
-  - `README.md`
-    - Provides project-related instructions and information.
+
 
 ## Getting Started
 
