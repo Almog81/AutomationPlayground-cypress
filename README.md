@@ -6,7 +6,7 @@ This project contains automated test scenarios for the Automation Playground web
 
 The Cypress-Projects repository contains automated test scenarios for two different applications:
 
-1. **[Automation Playground](cypress/e2e/Automation Playground/)**: This section includes test cases for various scenarios on the [Automation Playground website](http://www.uitestingplayground.com). The tests cover dynamic IDs, class attributes, hidden layers, load delays, AJAX data, client-side delay, click interactions, text input, scrollbars, dynamic tables, text verification, progress bar, visibility, mouse over, non-breaking space, overlapped element, and shadow DOM.
+1. **[Automation Playground](cypress/e2e/AutomationPlayground/)**: This section includes test cases for various scenarios on the [Automation Playground website](http://www.uitestingplayground.com). The tests cover dynamic IDs, class attributes, hidden layers, load delays, AJAX data, client-side delay, click interactions, text input, scrollbars, dynamic tables, text verification, progress bar, visibility, mouse over, non-breaking space, overlapped element, and shadow DOM.
 
 
 2. **[OrangeHRM](cypress/e2e/orangeHRM/)**: This section utilizes the Page Object pattern to automate test scenarios for the OrangeHRM application. The tests are organized into two files:
