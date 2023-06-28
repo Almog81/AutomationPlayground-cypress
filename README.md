@@ -1,26 +1,47 @@
-# Automation Playground
+# Cypress-Projects
 
-This project contains automated test scenarios for the Automation Playground website using Cypress.
+This project contains automated test scenarios for the Automation Playground website and OrangeHRM using Cypress. The tests for Automation Playground cover various scenarios, while the tests for OrangeHRM utilize the Page Object pattern.
 
 ## Description
 
-The Automation Playground project automates various scenarios on the [Automation Playground website](http://www.uitestingplayground.com) using Cypress. It includes test cases for dynamic IDs, class attributes, hidden layers, load delays, AJAX data, client-side delay, click interactions, text input, scrollbars, dynamic tables, and text verification.
+The Cypress-Projects repository contains automated test scenarios for two different applications:
 
-## Test Scenarios
+1. **Automation Playground**: This section includes test cases for various scenarios on the [Automation Playground website](http://www.uitestingplayground.com). The tests cover dynamic IDs, class attributes, hidden layers, load delays, AJAX data, client-side delay, click interactions, text input, scrollbars, dynamic tables, text verification, progress bar, visibility, mouse over, non-breaking space, overlapped element, and shadow DOM.
 
-The project includes the following test scenarios:
 
-- **Test01: Dynamic ID**: Verifies the presence of a button with a dynamic ID.
-- **Test02: Class Attribute**: Presses a button and verifies an alert message.
-- **Test03: Hidden Layers**: Clicks on a button and verifies its clickability.
-- **Test04: Load Delay**: Verifies the appearance of a button after a delay.
-- **Test05: AJAX Data**: Clicks on a button and verifies the loading of data via an AJAX GET request.
-- **Test06: Client Side Delay**: Clicks on a button and verifies data calculated on the client side.
-- **Test07: Click**: Clicks on a button and verifies the existence of a success button.
-- **Test08: Text Input**: Types input into a text field, clicks on a button, and verifies the input value.
-- **Test09: Scrollbars**: Scrolls to a button and clicks on it.
-- **Test10: Dynamic Table**: Locates the Chrome process row, gets the CPU load value, and verifies it against a yellow label value.
-- **Test11: Verify Text**: Verifies the presence of the text "Welcome UserName!" using XPath.
+2. **OrangeHRM**: This section utilizes the Page Object pattern to automate test scenarios for the OrangeHRM application. The tests are organized into two files:
+
+- **LoginTest.cy.ts**: This file contains tests related to the login functionality of OrangeHRM. The scenarios covered are:
+  - Successfully login: Verifies that a user can successfully log in using valid credentials.
+  - Fail to login: Verifies the error message when attempting to log in with invalid credentials.
+
+- **MenuTest.cy.ts**: This file contains tests related to menu actions and navigation within OrangeHRM. The scenarios covered are:
+  - Go to PIM page: Verifies that the user can navigate to the PIM page from the menu and confirms the page name.
+  - Search for a page: Verifies that the search functionality correctly displays the expected page in the menu.
+  - Search for a non-existing value: Verifies that searching for a non-existing value in the menu does not display any results.
+
+## Project Structure
+
+The project is organized as follows:
+
+- `cypress/`
+  - `fixtures/`
+    - Contains test data files if needed.
+  - `e2e/`
+    - `Automation Playground/`
+      - Contains the test files for Automation Playground scenarios.
+          - `pages/`
+            - Contains Page Object classes for Automation Playground.
+    - `orangeHRM/`
+      - Contains the test files for OrangeHRM scenarios.
+        - `pages/`
+            - Contains Page Object classes for OrangeHRM.
+  - `support/`
+    - Contains utility files, custom commands, and other support files for the tests.
+  - `plugins/`
+    - Contains Cypress plugins configuration files.
+  - `README.md`
+    - Provides project-related instructions and information.
 
 ## Getting Started
 
