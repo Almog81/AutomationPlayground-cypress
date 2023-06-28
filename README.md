@@ -40,8 +40,6 @@ The project is organized as follows:
     - Contains utility files, custom commands, and other support files for the tests.
   - `plugins/`
     - Contains Cypress plugins configuration files.
-  - `README.md`
-    - Provides project-related instructions and information.
 
 ## Getting Started
 
