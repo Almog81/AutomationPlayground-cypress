@@ -24,21 +24,21 @@ The Cypress-Projects repository contains automated test scenarios for two differ
 
 The project is organized as follows:
 
-- `[cypress/](cypress/)`
-  - `[fixtures/](cypress/fixtures/)`
+- `[cypress/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/)`
+  - `[fixtures/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/fixtures/)`
     - Contains test data files if needed.
-  - `[e2e/](cypress/e2e/)`
-    - `[Automation Playground/](cypress/e2e/Automation Playground/)`
+  - `[e2e/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/e2e/)`
+    - `[Automation Playground/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/e2e/Automation Playground/)`
       - Contains the test files for Automation Playground scenarios.
-          - `[pages/](cypress/e2e/Automation Playground/pages/)`
+          - `[pages/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/e2e/Automation Playground/pages/)`
             - Contains Page Object classes for Automation Playground.
-    - `[orangeHRM/](cypress/e2e/orangeHRM/)`
+    - `[orangeHRM/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/e2e/orangeHRM/)`
       - Contains the test files for OrangeHRM scenarios.
-        - `[pages/](cypress/e2e/orangeHRM/pages/)`
+        - `[pages/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/e2e/orangeHRM/pages/)`
             - Contains Page Object classes for OrangeHRM.
-  - `[support/](cypress/support/)`
+  - `[support/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/support/)`
     - Contains utility files, custom commands, and other support files for the tests.
-  - `[plugins/](cypress/plugins/)`
+  - `[plugins/](https://github.com/Almog81/Cypress-Projects/tree/main/cypress/plugins/)`
     - Contains Cypress plugins configuration files.
 
 
