@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "",
+    "test": "npm run cypress-test || npm run posttest",
+    "posttest": "npm run marge-report && npm run html-report",
+    
+    "cypress-test": "npx cypress run --reporter mochawesome",
+    "marge-report": "npx mochawesome-merge ./cypress/report/mochawesome-report/*.json -o ./cypress/report/report.json",
+    "html-report": "npx marge cypress/report/report.json --reportDir ./ --inline"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +20,8 @@
   },
   "description": "",
   "devDependencies": {
-    "cypress-xpath": "^2.0.1"
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-xpath": "^2.0.1",
+    "mochawesome-merge": "^4.3.0"
   }
 }

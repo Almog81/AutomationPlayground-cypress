@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-30T08:39:27.510Z",
+    "end": "2023-06-30T08:39:42.140Z",
+    "duration": 14630,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "143e8de0-6fef-4d60-8348-38679f9d09ed",
+      "title": "",
+      "fullFile": "cypress\\e2e\\orangeHRM\\MenuTest.cy.ts",
+      "file": "cypress\\e2e\\orangeHRM\\MenuTest.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4a2ef9b1-eb56-411c-b5bc-2511860d91e0",
+          "title": "Action Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Goto PIM page",
+              "fullTitle": "Action Test Goto PIM page",
+              "timedOut": null,
+              "duration": 6078,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\orangeHRM\\\\MenuTest.cy.ts\"\n}",
+              "code": "menuPage.clickInMenu('PIM');\ncy.get(menuPage.pageName).should('contain', 'PIM');",
+              "err": {},
+              "uuid": "fe7e3415-6cb1-4b1c-8f46-3331506bfb79",
+              "parentUUID": "4a2ef9b1-eb56-411c-b5bc-2511860d91e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Serch for Page",
+              "fullTitle": "Action Test Serch for Page",
+              "timedOut": null,
+              "duration": 3405,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\orangeHRM\\\\MenuTest.cy.ts\"\n}",
+              "code": "menuPage.search('buzz');\ncy.get(menuPage.menuItems).should('contain', 'Buzz');",
+              "err": {},
+              "uuid": "82b60781-3f1a-4e2a-83ad-04825ffe8c7d",
+              "parentUUID": "4a2ef9b1-eb56-411c-b5bc-2511860d91e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Serch for non exsit valeu",
+              "fullTitle": "Action Test Serch for non exsit valeu",
+              "timedOut": null,
+              "duration": 3433,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\orangeHRM\\\\MenuTest.cy.ts\"\n}",
+              "code": "menuPage.search('KUKU');\ncy.get(menuPage.menuItems).should('not.exist');",
+              "err": {},
+              "uuid": "50efbc56-8e07-4d2b-81d7-4ab2af7065a7",
+              "parentUUID": "4a2ef9b1-eb56-411c-b5bc-2511860d91e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fe7e3415-6cb1-4b1c-8f46-3331506bfb79",
+            "82b60781-3f1a-4e2a-83ad-04825ffe8c7d",
+            "50efbc56-8e07-4d2b-81d7-4ab2af7065a7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12916,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-[datetime]-[status]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "./cypress/report/mochawesome-report/",
+        "reportFilename": "[name]-[datetime]-[status]",
+        "timestamp": "longDate"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
